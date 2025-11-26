@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini E-commerce</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"> <!-- CSS externo -->
+</head>
+<body>
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand custom-brand" href="#">Minha Loja</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link custom-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#produtos">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#contato">Contato</a></li>
+
+          <li class="nav-item">
+            <a id="abre-carrinho" class="nav-link custom-link" href="#" data-bs-toggle="modal" data-bs-target="#carrinhoModal">
+              🛒 Carrinho (<span id="contador-carrinho">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="container mt-5">
+    <h2>Bem-vindo à Minha Loja!</h2>
+    <p>Somos especialistas em produtos criativos, geeks e tecnológicos. Qualidade garantida e entrega rápida!</p>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="container mt-5">
+    <h2>Nossos Produtos</h2>
+    <div class="row">
+
+      <!-- Produto 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/camiseta-geek-quadrilhos.webp" class="card-img-top" alt="Camiseta Geek">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Geek</h5>
+            <p class="card-text">Camiseta estilosa para fãs de quadrinhos.</p>
+            <button class="btn btn-primary btn-card" data-produto-id="0">Comprar1</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/caneca.webp" class="card-img-top" alt="Caneca Personalizada">
+          <div class="card-body">
+            <h5 class="card-title">Caneca Personalizada</h5>
+            <p class="card-text">Ideal para café ou chá.</p>
+            <button class="btn btn-primary btn-card" data-produto-id="1">Comprar2</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/mouse.webp" class="card-img-top" alt="Mouse Gamer">
+          <div class="card-body">
+            <h5 class="card-title">Mouse Gamer</h5>
+            <p class="card-text">Alta precisão para jogos competitivos.</p>
+            <button class="btn btn-primary btn-card" data-produto-id="2">Comprar3</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="container mt-5 mb-5">
+    <h2>Contato</h2>
+    <p>Entre em contato conosco pelo WhatsApp:</p>
+    <p><strong> (11) 90000-0000</strong></p>
+    <p>Ou envie um e-mail: <strong>contato@minhaloja.com</strong></p>
+  </section>
+
+  <!-- Modal Carrinho -->
+  <div class="modal fade" id="carrinhoModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🛒 Meu Carrinho</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr><th>Produto</th><th>Valor</th></tr>
+            </thead>
+            <tbody id="prod-carrinho"></tbody>
+          </table>
+        </div>
+
+        <div class="modal-footer">
+          <span class="me-auto fw-bold">Total: R$ <span id="total-carrinho">0,00</span></span>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button class="btn btn-success">Finalizar Compra</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
